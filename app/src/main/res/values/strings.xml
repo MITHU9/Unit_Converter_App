@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Unit Converter</string>
+    <string name="choose_btn">Choose An Option:</string>
+    <string name="weight_btn">Weight</string>
+    <string name="length_btn">Length</string>
+    <string name="currency_btn">Currency</string>
+    <string name="temperature_btn">Temperature</string>
+
+    <string name="input_text">Enter Value</string>
+    <string name="output_text">Output</string>
+    <string name="convert_btn">Convert</string>
+    <string name="todo02">TODO</string>
+
+    <string-array name="weight_spinnerText">
+
+        <item>Select</item>
+        <item>µg</item>
+        <item>mg</item>
+        <item>g</item>
+        <item>kg</item>
+        <item>lb</item>
+        <item>tonne</item>
+        <item>carat</item>
+
+    </string-array>
+
+    <string-array name="length_spinnerText">
+
+        <item>Select</item>
+        <item>µm</item>
+        <item>mm</item>
+        <item>cm</item>
+        <item>dm</item>
+        <item>m</item>
+        <item>inch</item>
+        <item>ft</item>
+        <item>mile</item>
+        <item>km</item>
+
+    </string-array>
+
+    <string-array name="currency_spinnerText">
+
+        <item>Select</item>
+        <item>BD</item>
+        <item>USD</item>
+        <item>UK</item>
+        <item>Dubai</item>
+        <item>Malaysia</item>
+        <item>India</item>
+        <item>Pakistan</item>
+        <item>Qatar</item>
+        <item>Kuwait</item>
+
+    </string-array>
+
+    <string-array name="temperature_spinnerText">
+
+        <item>Select</item>
+        <item>K</item>
+        <item>°F</item>
+        <item>°C</item>
+
+    </string-array>
+
+</resources>

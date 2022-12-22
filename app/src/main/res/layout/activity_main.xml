@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center|top"
+    android:orientation="vertical"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/optionBtnId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="@string/choose_btn">
+    </Button>
+
+   <LinearLayout
+       android:orientation="vertical"
+       android:gravity="center"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+       <LinearLayout
+           android:gravity="center"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <Button
+               android:id="@+id/weightBtnId"
+               android:layout_width="170dp"
+               android:layout_height="150dp"
+               android:layout_margin="10dp"
+               android:elevation="3dp"
+               android:drawableTop="@drawable/weight"
+               android:text="@string/weight_btn"
+               style="?android:attr/buttonBarButtonStyle">
+
+           </Button>
+
+           <Button
+               android:id="@+id/lengthBtnId"
+               android:layout_width="170dp"
+               android:layout_height="150dp"
+               android:elevation="3dp"
+               android:drawableTop="@drawable/length"
+               android:text="@string/length_btn"
+               style="?android:attr/buttonBarButtonStyle">
+
+           </Button>
+
+       </LinearLayout>
+
+       <LinearLayout
+           android:gravity="center"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <Button
+               android:id="@+id/currencyBtnId"
+               android:layout_width="170dp"
+               android:layout_height="150dp"
+               android:layout_margin="10dp"
+               android:elevation="3dp"
+               android:drawableTop="@drawable/money"
+               android:text="@string/currency_btn"
+               style="?android:attr/buttonBarButtonStyle">
+
+           </Button>
+
+           <Button
+               android:id="@+id/temperatureBtnId"
+               android:layout_width="170dp"
+               android:layout_height="150dp"
+               android:elevation="3dp"
+               android:drawableTop="@drawable/thermometer"
+               android:text="@string/temperature_btn"
+               style="?android:attr/buttonBarButtonStyle">
+
+           </Button>
+
+       </LinearLayout>
+
+   </LinearLayout>
+
+
+</LinearLayout>
