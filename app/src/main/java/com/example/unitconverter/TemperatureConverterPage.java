@@ -11,6 +11,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.text.DecimalFormat;
 
 public class TemperatureConverterPage extends AppCompatActivity {
@@ -20,6 +23,9 @@ public class TemperatureConverterPage extends AppCompatActivity {
      EditText editText;
      TextView textView;
      Button convertBtn;
+
+     FirebaseDatabase firebaseDatabase;
+     DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,48 +62,63 @@ public class TemperatureConverterPage extends AppCompatActivity {
                     }
                         //Kelvin calculation
 
-                    else if(value1.equals("K") && value2.equals("°F")){
-                            Double result = (input_val-273.15) * 9/5+32;
+                    else {
+
+                        if (value1.equals("K") && value2.equals("°F")) {
+                            Double result = (input_val - 273.15) * 9 / 5 + 32;
                             textView.setText(new DecimalFormat("##.##").format(result) + "°F");
-                        }
-                        else if(value1.equals("K") && value2.equals("°C")){
-                            Double result = (input_val-273.15);
+                        } else if (value1.equals("K") && value2.equals("°C")) {
+                            Double result = (input_val - 273.15);
                             textView.setText(new DecimalFormat("##.##").format(result) + "°C");
-                        }
-                        else if(value1.equals("K") && value2.equals("K")){
+                        } else if (value1.equals("K") && value2.equals("K")) {
                             Double result = input_val;
                             textView.setText(new DecimalFormat("##.##").format(result) + "K");
                         }
 
                         //Fahrenheit calculation
 
-                        if(value1.equals("°F") && value2.equals("K")){
-                            Double result = (input_val-32) * 5/9+273.15;
+                        else if (value1.equals("°F") && value2.equals("K")) {
+                            Double result = (input_val - 32) * 5 / 9 + 273.15;
                             textView.setText(new DecimalFormat("##.##").format(result) + "K");
-                        }
-                        else if(value1.equals("°F") && value2.equals("°C")){
-                            Double result = (input_val-32) * 5/9;
+                        } else if (value1.equals("°F") && value2.equals("°C")) {
+                            Double result = (input_val - 32) * 5 / 9;
                             textView.setText(new DecimalFormat("##.##").format(result) + "°C");
-                        }
-                        else if(value1.equals("°F") && value2.equals("°F")){
+                        } else if (value1.equals("°F") && value2.equals("°F")) {
                             Double result = input_val;
                             textView.setText(new DecimalFormat("##.##").format(result) + "°F");
                         }
 
                         // Celsius calculation
 
-                        if(value1.equals("°C") && value2.equals("K")){
+                        else if (value1.equals("°C") && value2.equals("K")) {
                             Double result = input_val + 273.15;
                             textView.setText(new DecimalFormat("##.##").format(result) + "K");
-                        }
-                        else if(value1.equals("°C") && value2.equals("°F")){
-                            Double result = (input_val * 9/5) + 32;
+                        } else if (value1.equals("°C") && value2.equals("°F")) {
+                            Double result = (input_val * 9 / 5) + 32;
                             textView.setText(new DecimalFormat("##.##").format(result) + "°F");
-                        }
-                        else if(value1.equals("°C") && value2.equals("°C")){
+                        } else if (value1.equals("°C") && value2.equals("°C")) {
                             Double result = input_val;
                             textView.setText(new DecimalFormat("##.##").format(result) + "°C");
                         }
+
+                        //Storing data
+
+                        firebaseDatabase = FirebaseDatabase.getInstance();
+                        reference = firebaseDatabase.getReference().child("appdata");
+
+                        String item_1 = inputSpinner.getSelectedItem().toString();
+                        String item_2 = outputSpinner.getSelectedItem().toString();
+                        String value_ = editText.getText().toString();
+                        String result_ = textView.getText().toString();
+                        String calValue = "From" + " " + value_ + item_1 + " " + "To" + " " + item_2 + " " + "=" + " " + result_;
+
+                        String id = reference.push().getKey();
+                        StoringAppData storingAppData = new StoringAppData(calValue);
+                        reference.child(id).setValue(storingAppData);
+
+                    }
+
+
                     }else{
                     Toast.makeText(getApplicationContext(), "Enter some value!", Toast.LENGTH_SHORT).show();
                 }

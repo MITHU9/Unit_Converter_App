@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class LoginPage extends AppCompatActivity {
 
-    private Button loginBtn,createNewBtn;
+    Button loginBtn,createNewBtn;
     TextInputLayout username_var,password_var;
 
     @Override
@@ -50,6 +50,8 @@ public class LoginPage extends AppCompatActivity {
                         final String username_data = username_var.getEditText().getText().toString();
                         final  String password_data = password_var.getEditText().getText().toString();
 
+                        //Getting data From firebase
+
                         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
                         DatabaseReference databaseReference = firebaseDatabase.getReference("users");
 
@@ -68,18 +70,21 @@ public class LoginPage extends AppCompatActivity {
                                         password_var.setError(null);
                                         password_var.setErrorEnabled(false);
 
+                                        String check_username = snapshot.child(username_data).child("username").getValue(String.class);
+
+                                        databaseReference.child("currentUser").setValue(check_username);
+
                                         Toast.makeText(getApplicationContext(),"Login Successful!",Toast.LENGTH_LONG).show();
-                                        Intent intent1 = new Intent(LoginPage.this,MainActivity.class);
+                                        Intent intent1 = new Intent(LoginPage.this,NavigationBarView.class);
                                         startActivity(intent1);
                                         finish();
 
                                     }else{
-                                        password_var.setError("wrong password!");
+                                        password_var.setError("Wrong password!");
                                     }
 
-
                                 }else{
-                                    username_var.setError("user does not exists!");
+                                    username_var.setError("User does not exists!");
                                 }
                             }
 
@@ -90,10 +95,10 @@ public class LoginPage extends AppCompatActivity {
                         });
 
                     }else {
-                        password_var.setError("please enter password");
+                        password_var.setError("Please enter password");
                     }
                 }else {
-                    username_var.setError("please enter username");
+                    username_var.setError("Please enter username");
                 }
 
             }

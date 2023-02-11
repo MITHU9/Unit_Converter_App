@@ -1,10 +1,19 @@
 <resources>
     <string name="app_name">Unit Converter</string>
+    <string name="developer">Shahariar Mithu</string>
     <string name="choose_btn">Choose An Option:</string>
     <string name="weight_btn">Weight</string>
     <string name="length_btn">Length</string>
     <string name="currency_btn">Currency</string>
     <string name="temperature_btn">Temperature</string>
+    <string name="history_btn">History</string>
+    <string name="currency_convert">Currency Convert</string>
+    <string name="length_convert">Length Convert</string>
+    <string name="weight_convert">Weight Convert</string>
+    <string name="temperature_convert">Temperature Convert</string>
+
+    <string name="open">open</string>
+    <string name="close">close</string>
 
     <string name="input_text">Enter Value</string>
     <string name="output_text">Output</string>
@@ -18,8 +27,6 @@
         <item>mg</item>
         <item>g</item>
         <item>kg</item>
-        <item>lb</item>
-        <item>tonne</item>
         <item>carat</item>
 
     </string-array>
@@ -42,7 +49,7 @@
     <string-array name="currency_spinnerText">
 
         <item>Select</item>
-        <item>BD</item>
+        <item>BDT</item>
         <item>USD</item>
         <item>UK</item>
         <item>Dubai</item>

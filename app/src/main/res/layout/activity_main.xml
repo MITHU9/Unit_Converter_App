@@ -3,86 +3,156 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center|top"
     android:orientation="vertical"
-    android:background="@color/background"
-    tools:context=".MainActivity">
+    android:background="#3A3937"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <Button
-        android:id="@+id/optionBtnId"
+   <com.google.android.material.appbar.AppBarLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+       <androidx.appcompat.widget.Toolbar
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:titleTextColor="@color/white"
+           android:background="#009688"
+           android:id="@+id/toolbarId"/>
+
+   </com.google.android.material.appbar.AppBarLayout>
+
+
+
+<!--    Button Design-->
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="@string/choose_btn">
-    </Button>
+        android:gravity="center|top"
+        android:orientation="vertical">
 
-   <LinearLayout
-       android:orientation="vertical"
-       android:gravity="center"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent">
 
-       <LinearLayout
-           android:gravity="center"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content">
 
-           <Button
-               android:id="@+id/weightBtnId"
-               android:layout_width="170dp"
-               android:layout_height="150dp"
-               android:layout_margin="10dp"
-               android:elevation="3dp"
-               android:drawableTop="@drawable/weight"
-               android:text="@string/weight_btn"
-               style="?android:attr/buttonBarButtonStyle">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="80dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-           </Button>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                app:cardBackgroundColor="#3A3937"
+                android:layout_height="wrap_content">
 
-           <Button
-               android:id="@+id/lengthBtnId"
-               android:layout_width="170dp"
-               android:layout_height="150dp"
-               android:elevation="3dp"
-               android:drawableTop="@drawable/length"
-               android:text="@string/length_btn"
-               style="?android:attr/buttonBarButtonStyle">
 
-           </Button>
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/weightBtnId"
+                        android:layout_width="170dp"
+                        android:layout_height="150dp"
+                        android:layout_margin="10dp"
+                        android:backgroundTint="#251F18"
+                        android:elevation="3dp"
+                        android:padding="15dp"
+                        android:textColor="@color/white"
+                        android:drawableTop="@drawable/weight"
+                        android:text="@string/weight_btn"
+                        style="?android:attr/buttonBarButtonStyle"/>
+
+
+                    <Button
+                        android:id="@+id/lengthBtnId"
+                        android:layout_width="170dp"
+                        android:layout_height="150dp"
+                        android:elevation="3dp"
+                        android:padding="15dp"
+                        android:backgroundTint="#251F18"
+                        android:textColor="@color/white"
+                        android:drawableTop="@drawable/length"
+                        android:text="@string/length_btn"
+                        style="?android:attr/buttonBarButtonStyle"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                app:cardBackgroundColor="#3A3937"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/currencyBtnId"
+                        android:layout_width="170dp"
+                        android:layout_height="150dp"
+                        android:layout_margin="10dp"
+                        android:elevation="3dp"
+                        android:backgroundTint="#251F18"
+                        android:padding="15dp"
+                        android:textColor="@color/white"
+                        android:drawableTop="@drawable/money"
+                        android:text="@string/currency_btn"
+                        style="?android:attr/buttonBarButtonStyle"/>
+
+
+                    <Button
+                        android:id="@+id/temperatureBtnId"
+                        android:layout_width="170dp"
+                        android:layout_height="150dp"
+                        android:elevation="3dp"
+                        android:padding="15dp"
+                        android:backgroundTint="#251F18"
+                        android:textColor="@color/white"
+                        android:drawableTop="@drawable/thermometer"
+                        android:text="@string/temperature_btn"
+                        style="?android:attr/buttonBarButtonStyle"/>
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+    </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            app:cardBackgroundColor="#3A3937"
+            android:layout_height="wrap_content">
+
+
+            <Button
+                android:id="@+id/historyBtnId"
+                android:layout_width="170dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:padding="15dp"
+                android:backgroundTint="#251F18"
+                android:textColor="@color/white"
+                android:elevation="3dp"
+                android:drawableTop="@drawable/history"
+                android:text="@string/history_btn"
+                style="?android:attr/buttonBarButtonStyle"/>
+
+        </androidx.cardview.widget.CardView>
+
+
 
        </LinearLayout>
 
-       <LinearLayout
-           android:gravity="center"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content">
-
-           <Button
-               android:id="@+id/currencyBtnId"
-               android:layout_width="170dp"
-               android:layout_height="150dp"
-               android:layout_margin="10dp"
-               android:elevation="3dp"
-               android:drawableTop="@drawable/money"
-               android:text="@string/currency_btn"
-               style="?android:attr/buttonBarButtonStyle">
-
-           </Button>
-
-           <Button
-               android:id="@+id/temperatureBtnId"
-               android:layout_width="170dp"
-               android:layout_height="150dp"
-               android:elevation="3dp"
-               android:drawableTop="@drawable/thermometer"
-               android:text="@string/temperature_btn"
-               style="?android:attr/buttonBarButtonStyle">
-
-           </Button>
-
-       </LinearLayout>
-
-   </LinearLayout>
 
 
 </LinearLayout>

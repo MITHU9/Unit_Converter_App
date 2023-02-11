@@ -76,16 +76,16 @@ public class SignupPage extends AppCompatActivity {
                             }
 
                         }else{
-                            password_var.setError("please enter password");
+                            password_var.setError("Please enter password");
                         }
                     }else{
-                        email_var.setError("please enter email");
+                        email_var.setError("Please enter email");
                     }
                 }else{
-                    username_var.setError("please enter username");
+                    username_var.setError("Please enter username");
                 }
             }else {
-                fullname_var.setError("please enter full name");
+                fullname_var.setError("Please enter full name");
             }
         });
     }
